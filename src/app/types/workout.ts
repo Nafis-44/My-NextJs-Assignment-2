@@ -10,9 +10,9 @@ export interface IWorkout {
     reps?: string | number;
     duration?: number | string;
     calories?: number;
-    caloriesBurned?: number; // Eita add kore deben
+    caloriesBurned?: number; 
     rating?: number;
-    muscleGroups?: string[]; // Eita add kore deben
+    muscleGroups?: string[]; 
     instructions?: string[];
     category?: string;
     kcal:number;

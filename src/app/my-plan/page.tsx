@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FaStar, FaTrash, FaCheck } from 'react-icons/fa';
 import Image from 'next/image';
-import { IWorkout } from '../types/workout';
+// import { IWorkout } from '../types/workout';
 
 interface Workout {
   id: string;
