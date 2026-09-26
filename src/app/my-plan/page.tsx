@@ -132,7 +132,7 @@ export default function MyPlanPage() {
                 activeTab === 'today' ? 'text-white border-b-2 border-[#ccff00]' : 'text-zinc-500 hover:text-zinc-300'
               }`}
             >
-              Today&apops;s Plan
+              Todays Plan
             </button>
             <button
               onClick={() => setActiveTab('saved')}
