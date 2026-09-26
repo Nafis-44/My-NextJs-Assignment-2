@@ -28,7 +28,7 @@ const WorkoutDetailsPage = () => {
                     throw new Error("Failed to fetch workouts");
                 }
                 const data = await res.json();
-                const matchedWorkout = data.find((item: any) => String(item.id) === String(id));
+                const matchedWorkout = data.find((item: IWorkout) => String(item.id) === String(id));
                 
                 if (matchedWorkout) {
                     setWorkout(matchedWorkout);
@@ -89,7 +89,7 @@ const WorkoutDetailsPage = () => {
             isCompleted: false
         };
 
-        if (!existing.some((item: any) => String(item.id) === String(formattedItem.id))) {
+        if (!existing.some((item: IWorkout) => String(item.id) === String(formattedItem.id))) {
             const updated = [...existing, formattedItem];
             localStorage.setItem('todayPlans', JSON.stringify(updated));
             toast.success("Added to today's plan");
@@ -112,7 +112,7 @@ const WorkoutDetailsPage = () => {
             image: workout.image
         };
 
-        if (!existing.some((item: any) => String(item.id) === String(formattedItem.id))) {
+        if (!existing.some((item: IWorkout) => String(item.id) === String(formattedItem.id))) {
             const updated = [...existing, formattedItem];
             localStorage.setItem('savedPlans', JSON.stringify(updated));
             toast.success("Workout saved for later");
@@ -135,7 +135,7 @@ const WorkoutDetailsPage = () => {
             <div className="max-w-5xl mx-auto bg-[#121212] border border-zinc-800 rounded-3xl p-6 md:p-10 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
                 <div className="lg:col-span-6">
-                    <div className="relative h-[350px] md:h-[450px] w-full bg-zinc-900 rounded-2xl overflow-hidden shadow-inner">
+                    <div className="relative h-85 md:h-112 w-full bg-zinc-900 rounded-2xl overflow-hidden shadow-inner">
                         <Image
                             src={workout.image}
                             alt={workout.name}

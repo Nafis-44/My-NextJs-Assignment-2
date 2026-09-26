@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FaStar, FaTrash, FaCheck } from 'react-icons/fa';
 import Image from 'next/image';
+import { IWorkout } from '../types/workout';
 
 interface Workout {
   id: string;
@@ -131,7 +132,7 @@ export default function MyPlanPage() {
                 activeTab === 'today' ? 'text-white border-b-2 border-[#ccff00]' : 'text-zinc-500 hover:text-zinc-300'
               }`}
             >
-              Today's Plan
+              Today&apops;s Plan
             </button>
             <button
               onClick={() => setActiveTab('saved')}
@@ -147,7 +148,7 @@ export default function MyPlanPage() {
             <span>Sort By:</span>
             <select
               value={sortBy}
-              onChange={(e) => setSortBy(e.target.value as any)}
+              onChange={(e) => setSortBy(e.target.value as "duration" | "calories" | "rating")}
               className="bg-zinc-900 border border-zinc-700 rounded px-2 py-1 text-white focus:outline-none"
             >
               <option value="duration">Duration</option>
@@ -176,7 +177,7 @@ export default function MyPlanPage() {
                 className="bg-[#1a1a1a] border border-zinc-800 rounded-xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4 hover:border-zinc-700 transition-all"
               >
                 <div className="flex items-center gap-4 w-full sm:w-auto">
-                  <div className="w-24 h-16 bg-zinc-800 rounded-lg overflow-hidden flex-shrink-0 flex items-center justify-center text-zinc-500 text-xs">
+                  <div className="w-24 h-16 bg-zinc-800 rounded-lg overflow-hidden shrink-0 flex items-center justify-center text-zinc-500 text-xs">
                     {item.image ? (
                       <Image src={item.image} alt={item.title} width={20} height={200} className="w-full h-full object-cover" />
                     )

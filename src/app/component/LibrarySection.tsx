@@ -38,11 +38,12 @@ const LibrarySection = () => {
 
             {/* 3x4 Grid System */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {workouts.map((workout: any) => {
+                
+                {workouts.map((workout: IWorkout) => {
                     const catArray = workout.category ? workout.category.split(',').map((c: string) => c.trim()) : [];
                     
                     // Kontrollon disa mundësi të emrit të fushës së kalorive nga API
-                    const workoutCalories = workout.calories || workout.calorie || workout.caloriesBurned || workout.kcal || '';
+                    const workoutCalories = workout.calories || workout.calories || workout.calories || workout.kcal || '';
 
                     return (
                         <Link

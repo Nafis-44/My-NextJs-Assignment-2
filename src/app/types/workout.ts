@@ -14,4 +14,6 @@ export interface IWorkout {
     rating?: number;
     muscleGroups?: string[]; // Eita add kore deben
     instructions?: string[];
+    category?: string;
+    kcal:number;
 }
