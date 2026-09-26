@@ -36,13 +36,13 @@ const LibrarySection = () => {
                 <p className="text-zinc-400 text-sm mt-1">Twelve lifts covering every major muscle group.</p>
             </div>
 
-            {/* 3x4 Grid System */}
+          
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 
                 {workouts.map((workout: IWorkout) => {
                     const catArray = workout.category ? workout.category.split(',').map((c: string) => c.trim()) : [];
                     
-                    // Kontrollon disa mundësi të emrit të fushës së kalorive nga API
+                    
                     const workoutCalories = workout.calories || workout.calories || workout.calories || workout.kcal || '';
 
                     return (
@@ -51,7 +51,7 @@ const LibrarySection = () => {
                             href={`/workouts/${workout.id}`}
                             className="group bg-[#121212] border border-zinc-800 rounded-2xl overflow-hidden hover:border-[#ccff00] transition-all duration-300 flex flex-col p-4 shadow-xl"
                         >
-                            {/* 1. Picture at the very top */}
+                            
                             <div className="relative h-48 w-full bg-zinc-900 rounded-xl overflow-hidden mb-4">
                                 <Image
                                     src={workout.image}
@@ -61,7 +61,7 @@ const LibrarySection = () => {
                                 />
                             </div>
 
-                            {/* 2. Two yellow category buttons */}
+                            
                             <div className="flex items-center gap-2 mb-2 flex-wrap">
                                 {catArray.map((cat: string, idx: number) => (
                                     <span 
@@ -73,15 +73,15 @@ const LibrarySection = () => {
                                 ))}
                             </div>
 
-                            {/* 3. Workout Name */}
+                            
                             <h3 className="text-base font-extrabold text-white group-hover:text-[#ccff00] transition-colors uppercase tracking-wide">
                                 {workout.name}
                             </h3>
 
-                            {/* 4. Equipment Name */}
+                            
                             <p className="text-xs text-zinc-400 mt-0.5 mb-4">{workout.equipment}</p>
 
-                            {/* 5. Stats Row (Time, Calories, Rating) */}
+                            
                             <div className="flex items-center gap-6 pt-3 border-t border-zinc-800/80 text-xs text-zinc-300 font-medium mt-auto px-0.5">
                                 <div className="flex items-center gap-1.5">
                                     <BiTimeFive className="w-4 h-4 text-zinc-400" />
